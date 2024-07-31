@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Only my cutie Oreo can open this">
+        <title>For My Cutie</title>
+        <link rel="stylesheet" href="style.css">
+    </head>    
+<body>
+    <div class="banner">
+        <div class="slider" style="--quantity: 10">
+            <div class="item" style="--position: 1"><img src="oreo.png" alt=""></div>
+            <div class="item" style="--position: 2"><img src="oreo.png" alt=""></div>
+            <div class="item" style="--position: 3"><img src="oreo.png" alt=""></div>
+            <div class="item" style="--position: 4"><img src="oreo.png" alt=""></div>
+            <div class="item" style="--position: 5"><img src="oreo.png" alt=""></div>
+            <div class="item" style="--position: 6"><img src="oreo.png" alt=""></div>
+            <div class="item" style="--position: 7"><img src="oreo.png" alt=""></div>
+            <div class="item" style="--position: 8"><img src="oreo.png" alt=""></div>
+            <div class="item" style="--position: 9"><img src="oreo.png" alt=""></div>
+            <div class="item" style="--position: 10"><img src="oreo.png" alt=""></div>
+        </div>
+        <div class="content">
+            <h1 data-content="CSS ONLY">
+                I LOVE YOU OREO
+            </h1>
+            <div class="author">
+                <h2></h2>
+                <p><b></b></p>
+                <p>
+                </p>
+            </div>
+            <div class="model"></div>
+        </div>
+    </div>
+    <div class="scrollable-content">
+        <div class="content-container">
+            <div class="image-container">
+                <img src="https://media.discordapp.net/attachments/1242657114292490362/1268164799376658452/IMG20240714150039.jpg?ex=66ab6e01&is=66aa1c81&hm=765881bf1b3f747b62c1cb72a8dbfb5749ffc16fe3f3b01a3cdf39a0117d7328&=&format=webp&width=503&height=671" alt="Tree image">
+            </div>
+            <div class="paragraph-container">
+                <h2 class="message-heading" style="font-family: 'Playwrite AU NSW', cursive; font-weight: 400; font-size: 30px; margin-bottom: 20px; color: #000000;">A Small Message for My Oreo</h2>
+                <p class="reveal-paragraph" style="font-family: 'Playwrite AU NSW', cursive; font-weight: 300; font-size: 18px; line-height: 1.6; color: #000000;">
+                    I'm so sorry for being busy lately. I've been missing you like crazy! 💕 Every minute away from you feels like forever, and I can't wait to see you again. I'm working hard because I want to build an amazing future for us, one where all our dreams come true.
+    
+                    I can't tell you how much it means to me to have you in my life, Oreo. You bring so much joy and warmth, and I'm grateful for every moment we share. 🌟 And you know what? This tree in the picture reminds me of you—its beauty and strength make me think of your gorgeous hair and how it flows so perfectly, just like the leaves in the wind. You're my inspiration and my everything, my sweet Oreo.
+    
+                    I love you more than words can say, and I'm counting down the days until we're together again. ❤️
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="scrollable-content">
+        <div class="paragraph-container">
+            <p class="reveal-paragraph">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </div>
+    </div>
+
+    <footer class="simple-footer">
+        <p>&copy; My Heart for U Oreo</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const paragraph = document.querySelector('.reveal-paragraph');
+            const paragraphContainer = document.querySelector('.paragraph-container');
+    
+            function revealParagraph() {
+                const containerRect = paragraphContainer.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                
+                if (containerRect.top < windowHeight && containerRect.bottom > 0) {
+                    const visibleHeight = Math.min(windowHeight - containerRect.top, containerRect.bottom) - 20; // 20px buffer
+                    const totalHeight = containerRect.height;
+                    const visibleRatio = visibleHeight / totalHeight;
+                    
+                    paragraph.style.opacity = visibleRatio;
+                    paragraph.style.transform = `translateY(${20 * (1 - visibleRatio)}px)`;
+                } else {
+                    paragraph.style.opacity = 0;
+                    paragraph.style.transform = 'translateY(20px)';
+                }
+            }
+    
+            window.addEventListener('scroll', revealParagraph);
+            revealParagraph(); // Initial call to set the initial state
+        });
+    </script>
+</body>
+</html>
